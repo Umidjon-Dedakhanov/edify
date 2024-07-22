@@ -12,12 +12,11 @@ const Login = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [messageServer, setMessageServer] = useState('');
     const [success, setSuccess] = useState(false);
-
     const [loginData, setLoginData] = useState({username: "", password: ""});
     const [message, setMessage] = useState("");
     useEffect(() => {
@@ -76,14 +75,16 @@ const Login = () => {
         marginRight: "10px"
       }
 
-    return user.isAuthenticated ?  <Redirect
-    to={{
-      pathname: "/admin",
-      state: {
-        from: location.pathname
-      }
-    }}
-  /> : (
+    //   user.isAuthenticated ?  <Redirect
+    //   to={{
+    //     pathname: "/admin",
+    //     state: {
+    //       from: location.pathname
+    //     }
+    //   }}
+    // /> :
+
+    return (
         <div className="login_page">
             <div className="login_panel">
                 <img className="login_logo" src={logo} alt="" />
